@@ -7,9 +7,13 @@
 [mitm]
 hostname = pay.pysmei.com
 *******************************/
-var body=$response.body
-.replace(/"viptime\":".*?"/g,'"viptime": "2099-12-31T00:00:00"')
-.replace(/"isvip\":\w+/g,'"isvip":true')
-.replace(/"nviptime\":".*?"/g,'"nviptime":"2099-12-31T00:00:00"')
-.replace(/"isnvip\":\w+/g,'"isnvip":true');
-$done(body);
+var body = $response.body; 
+var obj = JSON.parse(body); 
+
+obj.data.viptime = "2099-12-31T00:00:00";
+obj.data.isvip = true;
+obj.data.nviptime = "2099-12-31T00:00:00";
+obj.data.isnvip = true;
+
+body = JSON.stringify(obj);
+$done({body});
