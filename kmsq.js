@@ -7,13 +7,19 @@
 [mitm]
 hostname = pay.pysmei.com
 *******************************/
-var body = $response.body; 
-var obj = JSON.parse(body); 
 
-obj.data.viptime = "2099-12-31T00:00:00";
-obj.data.isvip = true;
-obj.data.nviptime = "2099-12-31T00:00:00";
-obj.data.isnvip = true;
-
-body = JSON.stringify(obj);
-$done({body});
+var obj = JSON.parse($response.body); 
+obj = {
+  "status": 1,
+  "info": "success",
+  "count": 0,
+  "data": {
+    "curtime": "2023-09-21T10:08:22.5971739+08:00",
+    "message": "用户与设备匹配",
+    "viptime": "2099-12-31T00:00:00",
+    "isvip": true,
+    "nviptime": "2099-12-31T00:00:00",
+    "isnvip": true
+  }
+};
+$done({body : JSON.stringify(obj)});
