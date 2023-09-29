@@ -7,14 +7,15 @@
 [mitm]
 hostname = pay.pysmei.com
 *******************************/
-
+var date = new Date();
+var curtime = date.toISOString();
 var obj = JSON.parse($response.body); 
 obj = {
   "status": 1,
   "info": "success",
   "count": 0,
   "data": {
-    "curtime": "2023-09-21T10:08:22.5971739+08:00",
+    "curtime": curtime,
     "message": "用户与设备匹配",
     "viptime": "2099-12-31T00:00:00",
     "isvip": true,
