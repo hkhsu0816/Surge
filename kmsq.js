@@ -5,7 +5,7 @@
 ^https?:\/\/pay2\.pigqq\.com\/Orders\/GetMemberVipTime.*? url script-response-body https://raw.githubusercontent.com/hkhsu0816/Surge/main/kmsq.js
 
 [mitm]
-hostname = pay.pysmei.com
+hostname = pay2.pigqq.com
 *******************************/
 var date = new Date();
 var curtime = date.toISOString();
