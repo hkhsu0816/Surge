@@ -27,7 +27,7 @@ obj = {
 $done({body : JSON.stringify(obj)});
 */
 var body = $response.body;
-var obj = JSON.parse(body);
+var obj = JSON.parse(body); 
 
 obj.data.data.isvip = true;
 obj.data.data.isnvip = true;
