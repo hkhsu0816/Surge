@@ -7,7 +7,7 @@
 [mitm]
 hostname = pay2.pigqq.com
 *******************************/
-
+/*
 var date = new Date();
 var curtime = date.toISOString();
 var obj = JSON.parse($response.body); 
@@ -25,3 +25,12 @@ obj = {
   }
 };
 $done({body : JSON.stringify(obj)});
+*/
+var obj = JSON.parse($response.body);
+var obj1 = obj.data;
+obj1.isvip = true;
+obj1.isnvip = true;
+obj1.viptime = "2099-12-31T00:00:00";
+obj1.nviptime = "2099-12-31T00:00:00";
+obj.data = obj1;
+$done({body: JSON.stringify(obj)});
