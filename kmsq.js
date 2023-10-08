@@ -28,11 +28,11 @@ $done({body : JSON.stringify(obj)});
 */
 var body = $response.body;
 var obj = JSON.parse(body); 
-var data = JSON.parse(obj.data)
-data.data.isvip = true;
-data.data.isnvip = true;
-data.data.viptime = "2099-12-31T00:00:00";
-data.data.nviptime = "2099-12-31T00:00:00";
+
+obj[data].data.isvip = true;
+obj[data].data.isnvip = true;
+obj[data].data.viptime = "2099-12-31T00:00:00";
+obj[data].data.nviptime = "2099-12-31T00:00:00";
 
 
 body = JSON.stringify(obj);
